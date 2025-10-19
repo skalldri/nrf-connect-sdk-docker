@@ -9,4 +9,4 @@ RUN nrfutil toolchain-manager env --as-script > /opt/toolchain-env.sh
 RUN nrfutil sdk-manager install v3.1.1
 COPY --chmod=0555 bash_env.sh /opt/bash_env.sh
 ENV BASH_ENV=/opt/bash_env.sh
-ENV ENV=/opt/bash_env.sh
+RUN cat /opt/bash_env.sh >> /root/.bashrc
